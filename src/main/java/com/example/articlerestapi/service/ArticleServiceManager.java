@@ -22,10 +22,6 @@ public class ArticleServiceManager {
         return articleMapper.mapToArticleDtoList(articles);
     }
 
-    /*public Article getArticle(final long articleId) {
-        return articleRepository.findById(articleId);
-    }*/
-
     public ArticleDto getArticleDto(final long articleId) {
         Article article = articleRepository.findById(articleId);
         return articleMapper.mapToArticleDto(article);
