@@ -30,8 +30,8 @@ public class ArticleController {
     }
 
     @PutMapping(value = "updateArticle")
-    public void updateArticle(@RequestParam Long articleId, @RequestBody ArticleDto articleDto){
-        articleServiceManager.updateArticle(articleId, articleDto);
+    public Long updateArticle(@RequestParam Long articleId, @RequestParam String articleTitle, @RequestParam String articleContent){
+        return articleServiceManager.updateArticle(articleId, articleTitle, articleContent);
     }
 
     @DeleteMapping(value = "deleteArticle")
