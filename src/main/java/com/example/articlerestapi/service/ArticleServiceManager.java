@@ -7,6 +7,7 @@ import com.example.articlerestapi.repositories.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -51,5 +52,15 @@ public class ArticleServiceManager {
         return newArticle.getId();
     }
 
+    public List<ArticleDto> searchArticleKeyword(String keyword) {
+        List<Article> articleList = articleRepository.findAll();
 
+        List<Article> articlesListWithKeyword = new ArrayList<>();
+        for(Article article : articleList) {
+            if(article.getArticleTitle().contains(keyword) || article.getArticleContent().contains(keyword)) {
+                articlesListWithKeyword.add(article);
+            }
+        }
+        return articleMapper.mapToArticleDtoList(articlesListWithKeyword);
+    }
  }
