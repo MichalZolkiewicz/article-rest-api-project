@@ -1,10 +1,7 @@
 package com.example.articlerestapi.domain;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,6 +22,8 @@ public class Article {
     @NotNull
     @GeneratedValue
     private Long id;
+    private String articleTitle;
+    private String articleContent;
     private Date dateOfPublication;
     private String magazineName;
     private String authorFirstAndLastName;
