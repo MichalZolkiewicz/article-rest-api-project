@@ -41,8 +41,15 @@ public class ArticleServiceManager {
         articleRepository.deleteById(articleId);
     }
 
-    public Long updateArticle(long articleId, ArticleDto articleDto) {
+    public Long updateArticle(long articleId, String articleTitle, String articleContent) {
         Article article = articleRepository.findById(articleId);
-        return articleId;
+        article.setArticleTitle(articleTitle);
+        article.setArticleContent(articleContent);
+
+        Article newArticle = articleRepository.save(article);
+        articleMapper.mapToArticleDto(newArticle);
+        return newArticle.getId();
     }
+
+
  }
