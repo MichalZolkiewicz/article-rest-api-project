@@ -6,7 +6,6 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -15,7 +14,6 @@ import java.util.Date;
 @Setter
 @Getter
 @Entity
-@Table(name = "TABLE")
 public class Article {
 
     @Id
