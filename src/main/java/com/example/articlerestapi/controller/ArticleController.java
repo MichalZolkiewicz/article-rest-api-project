@@ -19,7 +19,7 @@ public class ArticleController {
         return articleServiceManager.getAllArticles();
     }
 
-    @GetMapping(value = "getCopy")
+    @GetMapping(value = "getArticle")
     public ArticleDto getArticle(@RequestParam Long articleId) {
         return articleServiceManager.getArticleDto(articleId);
     }
