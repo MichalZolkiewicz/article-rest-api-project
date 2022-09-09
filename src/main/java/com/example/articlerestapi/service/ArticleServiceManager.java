@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -19,6 +20,7 @@ public class ArticleServiceManager {
 
     public List<ArticleDto> getAllArticles() {
         List<Article> articles = articleRepository.findAll();
+        articles.sort(Comparator.comparing(Article::getDateOfPublication).reversed());
         return articleMapper.mapToArticleDtoList(articles);
     }
 
