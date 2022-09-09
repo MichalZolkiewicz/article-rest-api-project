@@ -9,9 +9,9 @@ import java.util.List;
 
 @Transactional
 @Repository
-public interface ArticleRepository extends CrudRepository <Article, Integer> {
+public interface ArticleRepository extends CrudRepository <Article, Long> {
 
-    Article findById(Long id);
+    Article findById(long id);
 
     @Override
     List<Article> findAll();
@@ -21,4 +21,6 @@ public interface ArticleRepository extends CrudRepository <Article, Integer> {
 
     void deleteById(Long id);
 
+    @Override
+    void deleteAll();
 }
