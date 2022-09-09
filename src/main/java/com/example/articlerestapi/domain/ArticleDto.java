@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -13,7 +13,7 @@ import java.util.Date;
 public class ArticleDto {
 
     private Long userId;
-    private Date dateOfPublication;
+    private LocalDate dateOfPublication;
     private String magazineName;
     private Timestamp timestamp;
 }

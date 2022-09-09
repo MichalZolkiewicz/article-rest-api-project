@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,12 +22,12 @@ public class Article {
     private Long id;
     private String articleTitle;
     private String articleContent;
-    private Date dateOfPublication;
+    private LocalDate dateOfPublication;
     private String magazineName;
     private String authorFirstAndLastName;
     private Timestamp timestamp;
 
-    public Article(Long id, Date dateOfPublication, String magazineName, Timestamp timestamp) {
+    public Article(Long id, LocalDate dateOfPublication, String magazineName, Timestamp timestamp) {
         this.id = id;
         this.dateOfPublication = dateOfPublication;
         this.magazineName = magazineName;
