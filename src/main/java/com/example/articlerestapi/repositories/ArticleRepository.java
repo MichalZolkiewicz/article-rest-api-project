@@ -13,14 +13,11 @@ public interface ArticleRepository extends CrudRepository <Article, Long> {
 
     Article findById(long id);
 
-    @Override
     List<Article> findAll();
 
-    @Override
     Article save(Article article);
 
     void deleteById(Long id);
 
-    @Override
     void deleteAll();
 }
