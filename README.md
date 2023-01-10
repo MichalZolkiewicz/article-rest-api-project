@@ -1,6 +1,6 @@
 ### Description
 
-Project is an implementation of an online store backend layer. It based on REST architecture.
+Project is an implementation of an article library backend layer. It based on REST architecture.
 
 ### Demo
 
